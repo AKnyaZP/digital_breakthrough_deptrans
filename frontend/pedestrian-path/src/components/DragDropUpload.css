@@ -1,0 +1,20 @@
+.drag-drop-upload {
+    height: calc(100% - 80px);
+    border: 2px dashed #7b83ad;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.drag-drop-upload.dragging {
+    background-color: #d3e3fc;
+    /* Светло-голубой цвет при перетаскивании */
+}
+
+.drag-drop-upload:hover {
+    background-color: #e0e7ff;
+}

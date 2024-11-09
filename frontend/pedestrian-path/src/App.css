@@ -1,0 +1,108 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #ffffff;
+  /* Темно-синий цвет */
+  color: hsla(235, 87%, 34%, 0.644);
+  /* Белый текст */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.add-data-button {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #377dff;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.content {
+  flex: 1;
+  background-color: #e7eefe;
+  /* Светло-голубой фон */
+  padding: 40px;
+  box-sizing: border-box;
+  overflow: auto;
+  /* Прокрутка, если контент превышает высоту экрана */
+}
+
+.map-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.map-item {
+  cursor: pointer;
+  margin-right: 30px;
+  /* Отступ между картами */
+}
+
+.map-item:last-child {
+  margin-right: 0;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 60%;
+  max-width: 800px;
+  box-sizing: border-box;
+}
+
+.close-button {
+  background: #1e3a8a;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+}
+
+.drag-drop-upload {
+  height: calc(100% - 80px);
+  border: 2px dashed #7b83ad;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.drag-drop-upload.dragging {
+  background-color: #d3e3fc;
+  /* Светло-голубой цвет при перетаскивании */
+}
+
+.drag-drop-upload:hover {
+  background-color: #e0e7ff;
+}
