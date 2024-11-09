@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import './App.css';
 
 function App() {
-  const [imageSrc, setImageSrc] = useState(null);
+  const [imageSrc, setImageSrc] = useState([null, null]); // Массив для двух карт
   const fileInputRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -63,7 +63,9 @@ function App() {
       });
       const blob = await response.blob();
       const url = URL.createObjectURL(blob);
-      setImageSrc(url);
+
+      // Обновляем состояние для отображения двух карт
+      setImageSrc([url, url]); // или можно отправить разные цвета/данные для разных карт
     } catch (error) {
       console.error('Error generating map image:', error);
     }
@@ -88,9 +90,10 @@ function App() {
           <p>Drag & Drop (Загрузка карты)</p>
         </div>
 
-        {imageSrc && (
-          <div style={{ textAlign: 'center', marginTop: '20px' }}>
-            <img src={imageSrc} alt="Generated Map" style={{ width: '80%', height: 'auto' }} />
+        {imageSrc[0] && imageSrc[1] && (
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <img src={imageSrc[0]} alt="Generated Map 1" style={{ width: '48%', height: 'auto' }} />
+            <img src={imageSrc[1]} alt="Generated Map 2" style={{ width: '48%', height: 'auto' }} />
           </div>
         )}
       </div>
